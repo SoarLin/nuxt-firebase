@@ -1,89 +1,220 @@
 <template>
-  <section class="container">
-    <div>
-      <h2>
-        Write to Firestore.
-      </h2>
-      <div>
-        <button @click="writeToFirestore" :disabled="writeSuccessful">
-          <span v-if="!writeSuccessful">Write now</span>
-          <span v-else>Successful!</span>
-        </button>
-      </div>
-    </div>
-    <div>
-      <h2>
-        Read from Firestore.
-      </h2>
-      <div>
-        <button @click="readFromFirestore" :disabled="readSuccessful">
-          <span v-if="!readSuccessful">Read now</span>
-          <span v-else>Successful!</span>
-        </button>
-        <p>{{ text }}</p>
-      </div>
-    </div>
-  </section>
+  <v-app light>
+    <v-toolbar color="white">
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <section>
+        <v-parallax src="hero.jpeg" height="600">
+          <v-layout column align-center justify-center class="white--text">
+            <img src="vuetify.png" alt="Vuetify.js" height="200" />
+            <h1 class="white--text mb-2 display-1 text-center">
+              Parallax Template
+            </h1>
+            <div class="subheading mb-4 text-center">Powered by Vuetify</div>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              href="/pre-made-themes"
+              >Get Started</v-btn
+            >
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section>
+        <v-layout column wrap class="my-12" align-center>
+          <v-flex xs12 sm4 class="my-4">
+            <div class="text-center">
+              <h2 class="headline">The best way to start developing</h2>
+              <span class="subheading">Cras facilisis mi vitae nunc</span>
+            </div>
+          </v-flex>
+          <v-flex xs12>
+            <v-container grid-list-xl>
+              <v-layout row wrap align-center>
+                <v-flex xs12 md4>
+                  <v-card flat class="transparent">
+                    <v-card-text class="text-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >mdi-palette</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-center">Material Design</div>
+                    </v-card-title>
+                    <v-card-text>
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
+                      volutpat tincidunt ornare. Pellentesque habitant morbi
+                      tristique senectus et netus et malesuada fames ac turpis
+                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
+                      tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card flat class="transparent">
+                    <v-card-text class="text-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >mdi-flash</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline">Fast development</div>
+                    </v-card-title>
+                    <v-card-text>
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
+                      volutpat tincidunt ornare. Pellentesque habitant morbi
+                      tristique senectus et netus et malesuada fames ac turpis
+                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
+                      tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-card flat class="transparent">
+                    <v-card-text class="text-center">
+                      <v-icon x-large class="blue--text text--lighten-2"
+                        >mdi-wrench</v-icon
+                      >
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline text-center">
+                        Completely Open Sourced
+                      </div>
+                    </v-card-title>
+                    <v-card-text>
+                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
+                      volutpat tincidunt ornare. Pellentesque habitant morbi
+                      tristique senectus et netus et malesuada fames ac turpis
+                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
+                      tellus bibendum tincidunt. Suspendisse potenti.
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
+        </v-layout>
+      </section>
+
+      <section>
+        <v-parallax src="section.jpg" height="380">
+          <v-layout column align-center justify-center>
+            <div class="headline white--text mb-4 text-center">
+              Web development has never been easier
+            </div>
+            <em>Kick-start your application today</em>
+            <v-btn
+              class="mt-12"
+              color="blue lighten-2"
+              dark
+              large
+              href="/pre-made-themes"
+              >Get Started</v-btn
+            >
+          </v-layout>
+        </v-parallax>
+      </section>
+
+      <section>
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-center class="my-12">
+            <v-flex xs12 sm4>
+              <v-card flat class="transparent">
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Company info</div>
+                </v-card-title>
+                <v-card-text>
+                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat
+                  tincidunt ornare. Pellentesque habitant morbi tristique
+                  senectus et netus et malesuada fames ac turpis egestas. Nullam
+                  in aliquet odio. Aliquam eu est vitae tellus bibendum
+                  tincidunt. Suspendisse potenti.
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm4 offset-sm1>
+              <v-card flat class="transparent">
+                <v-card-title primary-title class="layout justify-center">
+                  <div class="headline">Contact us</div>
+                </v-card-title>
+                <v-card-text>
+                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat
+                  tincidunt ornare.
+                </v-card-text>
+                <v-list class="transparent">
+                  <v-list-item>
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-phone</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>777-867-5309</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-map-marker</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>Chicago, US</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-list-item>
+                    <v-list-item-action>
+                      <v-icon class="blue--text text--lighten-2"
+                        >mdi-email</v-icon
+                      >
+                    </v-list-item-action>
+                    <v-list-item-content>
+                      <v-list-item-title>john@vuetifyjs.com</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </section>
+
+      <v-footer color="blue darken-2">
+        <v-layout row wrap align-center>
+          <v-flex xs12>
+            <div class="white--text ml-4">
+              Made with
+              <v-icon class="red--text">mdi-heart</v-icon>by
+              <a
+                class="white--text"
+                href="https://vuetifyjs.com"
+                target="_blank"
+                >Vuetify</a
+              >
+              and
+              <a class="white--text" href="https://github.com/vwxyzjn"
+                >Costa Huang</a
+              >
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-footer>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import { fireDb } from '~/plugins/firebase.js'
 export default {
   data() {
     return {
-      writeSuccessful: false,
-      readSuccessful: false,
-      text: ''
-    }
-  },
-  async asyncData({ app, params, error }) {
-    const ref = fireDb.collection('test').doc('test')
-    let snap
-    try {
-      snap = await ref.get()
-    } catch (e) {
-      // TODO: error handling
-      console.error(e)
-    }
-    return {
-      text: snap.data().text
-    }
-  },
-  methods: {
-    async writeToFirestore() {
-      const ref = fireDb.collection('test').doc('test')
-      const document = {
-        text: 'This is a test message.'
-      }
-      try {
-        await ref.set(document)
-      } catch (e) {
-        // TODO: error handling
-        console.error(e)
-      }
-      this.writeSuccessful = true
-    },
-    async readFromFirestore() {
-      const ref = fireDb.collection('test').doc('test')
-      let snap
-      try {
-        snap = await ref.get()
-      } catch (e) {
-        // TODO: error handling
-        console.error(e)
-      }
-      this.text = snap.data().text
-      this.readSuccessful = true
+      title: 'MyLogo'
     }
   }
 }
 </script>
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-</style>
+
+<style lang="scss" scoped></style>
