@@ -46,7 +46,8 @@ module.exports = {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-i18n'
   ],
   /*
    ** Axios module configuration
@@ -57,6 +58,24 @@ module.exports = {
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
+  i18n: {
+    locales: [
+      { name: 'zh-TW', code: 'tw', text: '繁體中文' },
+      { name: 'en-US', code: 'en', text: 'English' }
+    ],
+    defaultLocale: 'tw',
+    vueI18n: {
+      fallbackLocale: 'tw',
+      messages: {
+        tw: require('./locales/zh-TW.json'),
+        en: require('./locales/en-US.json')
+      }
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'language'
+    }
+  },
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
