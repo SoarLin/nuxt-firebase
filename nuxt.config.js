@@ -30,7 +30,7 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase.js'],
+  plugins: ['~/plugins/firebase.js', '~/plugins/i18n.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -60,8 +60,7 @@ module.exports = {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      themes: {
-      }
+      themes: {}
     }
   },
   /*
