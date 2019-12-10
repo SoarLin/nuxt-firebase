@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app height="70">
+  <v-app-bar app>
     <v-toolbar-title v-text="title"></v-toolbar-title>
     <v-spacer></v-spacer>
     <v-menu left bottom>
