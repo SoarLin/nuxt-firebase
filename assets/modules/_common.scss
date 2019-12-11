@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "PingFang TC", "微軟正黑體", "Microsoft JhengHei", "新細明體", PMingLiU, sans-serif;
+  color: $black;
+  background-color: #fff;
+}
+
+/* reset HTML default style*/
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}

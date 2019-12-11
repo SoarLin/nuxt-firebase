@@ -1,0 +1,19 @@
+.about-me {
+  max-width: 960px !important;
+
+  @include md {
+    max-width: 720px !important;
+  }
+
+  @include sm {
+    max-width: 480px !important;
+  }
+}
+
+.card-body {
+  .col-12 {
+    @include sm {
+      padding: 3px 15px;
+    }
+  }
+}
