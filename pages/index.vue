@@ -13,12 +13,28 @@
             <h1 class="white--text profile-name">Name {{ $t('Header') }}</h1>
             <div class="subheading mb-4 text-center">Job Title</div>
             <div class="contact-group">
-              <v-btn class="btn-line" large href="#">
-                LINE
-              </v-btn>
-              <v-btn class="btn-phone" color="blue" large href="#">
-                Phone
-              </v-btn>
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-btn v-on="on" class="btn-line" large href="#">
+                    LINE
+                  </v-btn>
+                </template>
+                <span>Add My LINE</span>
+              </v-tooltip>
+              <v-tooltip top>
+                <template v-slot:activator="{ on }">
+                  <v-btn
+                    v-on="on"
+                    class="btn-phone"
+                    color="blue"
+                    large
+                    href="#"
+                  >
+                    Phone
+                  </v-btn>
+                </template>
+                <span>Call Me</span>
+              </v-tooltip>
             </div>
           </v-layout>
         </v-parallax>
