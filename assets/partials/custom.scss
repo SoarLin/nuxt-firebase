@@ -1,0 +1,27 @@
+.custom-section {
+  background-color: rgba(#E5B13C, .2);
+}
+
+.custom-head {
+  margin: 0 50px;
+  @include size(180px, 180px, 50%);
+
+  @include md {
+    @include size(120px, 120px, 50%);
+  }
+
+  @include sm {
+    @include size(80px, 80px, 50%);
+  }
+
+  &.custom1 {
+    @include no-image-bg;
+    background-image: url(/head.jpg);
+    box-shadow: 1px 2px 8px 5px rgba(#555, .2);
+  }
+}
+
+.custom-word {
+  width: 60%;
+  font-size: 1.2em;
+}

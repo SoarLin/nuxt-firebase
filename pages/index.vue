@@ -6,81 +6,35 @@
 
       <about-me></about-me>
 
+      <services></services>
+
       <section>
-        <v-layout column wrap class="my-12" align-center>
-          <v-flex xs12 sm4 class="my-4">
-            <div class="text-center">
-              <h2 class="headline">The best way to start developing</h2>
-              <span class="subheading">Cras facilisis mi vitae nunc</span>
-            </div>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap align-center>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2"
-                        >mdi-palette</v-icon
-                      >
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-center">Material Design</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
-                      volutpat tincidunt ornare. Pellentesque habitant morbi
-                      tristique senectus et netus et malesuada fames ac turpis
-                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
-                      tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2"
-                        >mdi-flash</v-icon
-                      >
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Fast development</div>
-                    </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
-                      volutpat tincidunt ornare. Pellentesque habitant morbi
-                      tristique senectus et netus et malesuada fames ac turpis
-                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
-                      tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2"
-                        >mdi-wrench</v-icon
-                      >
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-center">
-                        Completely Open Sourced
-                      </div>
-                    </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla
-                      volutpat tincidunt ornare. Pellentesque habitant morbi
-                      tristique senectus et netus et malesuada fames ac turpis
-                      egestas. Nullam in aliquet odio. Aliquam eu est vitae
-                      tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-flex>
-        </v-layout>
+        <v-container fluid>
+          <h3 class="display-1 text-center">景點介紹</h3>
+          <v-row justify="center">
+            <v-col cols="12" sm="10" md="8">
+              <v-chip-group
+                column
+                active-class="primary--text"
+                class="city-group"
+              >
+                <v-chip v-for="tag in tags" :key="tag">
+                  {{ tag }}
+                </v-chip>
+              </v-chip-group>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col v-for="i in 10" :key="i" cols="12" md="4" sm="6" xs="12">
+              <v-card>
+                <v-img src="plane.jpg"></v-img>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
       </section>
+
+      <custom-words></custom-words>
 
       <section>
         <v-parallax src="section.jpg" height="380">
@@ -193,15 +147,31 @@
 import MyHeader from '@/components/Header'
 import HeroBanner from '@/components/Herobanner'
 import AboutMe from '@/components/About'
+import Services from '@/components/Services'
+import CustomWords from '@/components/CustomWords'
 
 export default {
   components: {
     MyHeader,
     HeroBanner,
-    AboutMe
+    AboutMe,
+    Services,
+    CustomWords
   },
   data() {
-    return {}
+    return {
+      tags: [
+        'ALL',
+        '台北',
+        '台中',
+        '嘉義',
+        '台南',
+        '高雄',
+        '宜蘭',
+        '花蓮',
+        '台東'
+      ]
+    }
   }
 }
 </script>
