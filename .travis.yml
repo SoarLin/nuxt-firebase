@@ -1,12 +1,14 @@
 language: node_js
 node_js:
-  - 7
+  - 12
 
 cache:
-  cache: npm
+  directories:
+    - 'node_modules'
 
-before_install:
-  - npm install --save nuxt
+branches:
+  only:
+    - master
 
 install:
   - npm install
@@ -16,9 +18,13 @@ before_script:
 
 script:
   - npm run generate:gh-pages
-  - npm run build:gh-pages
   - npm run deploy
 
-branches:
-  only:
-    - master
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_ACCESS_TOKEN # Set in travis-ci.org dashboard, marked secure https://docs.travis-ci.com/user/deployment/pages/#Setting-the-GitHub-token
+  target-branch: gh-pages
+  local-dir: dist
+  on:
+    branch: master
