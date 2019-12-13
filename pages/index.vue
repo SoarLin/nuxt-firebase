@@ -145,7 +145,7 @@
 
 <script>
 import MyHeader from '@/components/Header'
-import HeroBanner from '@/components/Herobanner'
+import HeroBanner from '@/components/HeroBanner'
 import AboutMe from '@/components/About'
 import Services from '@/components/Services'
 import CustomWords from '@/components/CustomWords'
