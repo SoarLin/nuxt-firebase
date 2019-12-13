@@ -5,7 +5,7 @@
         <v-row>
           <v-col cols="12" md="6">
             <div class="card-body">
-              <div class="h4 mt-0 title">About</div>
+              <div class="h4 mt-0 title">{{ $t('關於司機') }}</div>
               <p>
                 Hello! I am Anthony Barnett. Web Developer, Graphic Designer and
                 Photographer.
@@ -20,30 +20,38 @@
           </v-col>
           <v-col cols="12" md="6">
             <div class="card-body">
-              <div class="h4 mt-0 title">Basic Information</div>
+              <div class="h4 mt-0 title">{{ $t('基本資料') }}</div>
               <v-row>
                 <v-col cols="12" sm="4">
-                  <strong class="text-uppercase">Age:</strong>
+                  <strong class="text-uppercase">{{ $t('所在地') }} :</strong>
                 </v-col>
-                <v-col cols="12" sm="8">39</v-col>
+                <v-col cols="12" sm="8">{{ $t('台北') }}</v-col>
               </v-row>
               <v-row>
                 <v-col cols="12" sm="4">
-                  <strong class="text-uppercase">Email:</strong>
+                  <strong class="text-uppercase">{{ $t('車款') }} :</strong>
                 </v-col>
-                <v-col cols="12" sm="8">aaa@bbb.cc</v-col>
+                <v-col cols="12" sm="8">BMW</v-col>
               </v-row>
               <v-row>
                 <v-col cols="12" sm="4">
-                  <strong class="text-uppercase">Phone:</strong>
+                  <strong class="text-uppercase">{{ $t('乘客數') }} :</strong>
                 </v-col>
-                <v-col cols="12" sm="8">+886-987-123-456</v-col>
+                <v-col cols="12" sm="8">1 ~ 4</v-col>
               </v-row>
               <v-row>
                 <v-col cols="12" sm="4">
-                  <strong class="text-uppercase">Language:</strong>
+                  <strong class="text-uppercase">{{ $t('保險') }} :</strong>
                 </v-col>
-                <v-col cols="12" sm="8">Mandarin, English</v-col>
+                <v-col cols="12" sm="8">XXXXXX</v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" sm="4">
+                  <strong class="text-uppercase">{{ $t('語言') }} :</strong>
+                </v-col>
+                <v-col cols="12" sm="8"
+                  >{{ $t('中文') }}, {{ $t('英文') }}</v-col
+                >
               </v-row>
             </div>
           </v-col>

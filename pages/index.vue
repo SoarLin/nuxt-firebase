@@ -8,53 +8,27 @@
 
       <services></services>
 
-      <section>
-        <v-container fluid>
-          <h3 class="display-1 text-center">景點介紹</h3>
-          <v-row justify="center">
-            <v-col cols="12" sm="10" md="8">
-              <v-chip-group
-                column
-                active-class="primary--text"
-                class="city-group"
-              >
-                <v-chip v-for="tag in tags" :key="tag">
-                  {{ tag }}
-                </v-chip>
-              </v-chip-group>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col v-for="i in 10" :key="i" cols="12" md="4" sm="6" xs="12">
-              <v-card>
-                <v-img src="plane.jpg"></v-img>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </section>
+      <attractions></attractions>
 
-      <custom-words></custom-words>
+      <itinerary></itinerary>
 
       <section>
         <v-parallax src="section.jpg" height="380">
           <v-layout column align-center justify-center>
             <div class="headline white--text mb-4 text-center">
-              Web development has never been easier
+              客製化旅遊行程
             </div>
-            <em>Kick-start your application today</em>
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              href="/pre-made-themes"
-              >Get Started</v-btn
-            >
+            <em>多天行程包車旅遊，跨縣市包車旅行</em>
+            <v-btn class="mt-12" color="blue lighten-2" dark large href="#">
+              與我聯繫
+            </v-btn>
           </v-layout>
         </v-parallax>
       </section>
 
+      <custom-words></custom-words>
+
+      <!--
       <section>
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-12">
@@ -118,26 +92,16 @@
           </v-layout>
         </v-container>
       </section>
+      -->
 
       <v-footer color="blue darken-2">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-4">
-              Made with
-              <v-icon class="red--text">mdi-heart</v-icon>by
-              <a
-                class="white--text"
-                href="https://vuetifyjs.com"
-                target="_blank"
-                >Vuetify</a
-              >
-              and
-              <a class="white--text" href="https://github.com/vwxyzjn"
-                >Costa Huang</a
-              >
-            </div>
-          </v-flex>
-        </v-layout>
+        <v-row align="center" justify="end" class="white--text pr-4">
+          Copyright &copy; {{ year }},&nbsp;&nbsp;
+          <a class="white--text" href="https://soarlin.github.io">
+            <v-icon class="white--text">mdi-github-circle</v-icon>
+            Soar Lin
+          </a>
+        </v-row>
       </v-footer>
     </v-content>
   </v-app>
@@ -149,6 +113,8 @@ import HeroBanner from '@/components/HeroBanner'
 import AboutMe from '@/components/About'
 import Services from '@/components/Services'
 import CustomWords from '@/components/CustomWords'
+import Attractions from '@/components/Attractions'
+import Itinerary from '@/components/Itinerary'
 
 export default {
   components: {
@@ -156,21 +122,17 @@ export default {
     HeroBanner,
     AboutMe,
     Services,
+    Attractions,
+    Itinerary,
     CustomWords
   },
   data() {
-    return {
-      tags: [
-        'ALL',
-        '台北',
-        '台中',
-        '嘉義',
-        '台南',
-        '高雄',
-        '宜蘭',
-        '花蓮',
-        '台東'
-      ]
+    return {}
+  },
+  computed: {
+    year() {
+      const date = new Date()
+      return date.getFullYear()
     }
   }
 }
