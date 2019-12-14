@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const config = {
-  apiKey: FIREBASE_APIKEY,
+  apiKey: process.env.FIREBASE_APIKEY,
   authDomain: "my-firebase-test-project-a13fb.firebaseapp.com",
   databaseURL: "https://my-firebase-test-project-a13fb.firebaseio.com",
   projectId: "my-firebase-test-project-a13fb",
