@@ -10,9 +10,6 @@ branches:
   only:
     - master
 
-env:
-  - FIREBASE_APIKEY=$FIREBASE_APIKEY
-
 install:
   - npm install
   - npm run generate
