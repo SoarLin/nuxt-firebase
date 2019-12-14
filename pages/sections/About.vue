@@ -31,7 +31,7 @@
                 <v-col cols="12" sm="4">
                   <strong class="text-uppercase">{{ $t('車款') }} :</strong>
                 </v-col>
-                <v-col cols="12" sm="8">BMW</v-col>
+                <v-col cols="12" sm="8">BMW 3</v-col>
               </v-row>
               <v-row>
                 <v-col cols="12" sm="4">
@@ -49,9 +49,9 @@
                 <v-col cols="12" sm="4">
                   <strong class="text-uppercase">{{ $t('語言') }} :</strong>
                 </v-col>
-                <v-col cols="12" sm="8"
-                  >{{ $t('中文') }}, {{ $t('英文') }}</v-col
-                >
+                <v-col cols="12" sm="8">
+                  {{ $t('中文') }}, {{ $t('英文') }}
+                </v-col>
               </v-row>
             </div>
           </v-col>

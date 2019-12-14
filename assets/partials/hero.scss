@@ -1,0 +1,85 @@
+@keyframes pulsate {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 0.0;
+  }
+
+  50% {
+    opacity: 1.0;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0.0;
+  }
+}
+
+.profile-image {
+  position: relative;
+  touch-action: manipulation;
+  text-decoration: none;
+
+  &:before {
+    content: '';
+    border: 15px solid rgba(#1976d2, 0.6);
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    position: absolute;
+    left: 0;
+    animation: pulsate 1.6s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.0;
+    z-index: 99;
+  }
+
+  img {
+    position: relative;
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    padding: 0;
+    margin: 0;
+    border: 15px solid transparent;
+    z-index: 9999;
+    transition: all .3s ease-out;
+  }
+}
+
+.profile-name {
+  font-weight: 800;
+  font-size: 2.5em;
+  margin: 15px auto;
+}
+
+.subheading {
+  margin-top: -20px
+}
+
+.contact-group {
+  margin-top: 15px;
+  display: flex;
+  width: 320px;
+  justify-content: space-around;
+
+  .btn-line,
+  .btn-phone {
+    padding-left: 10px;
+    width: 130px;
+    font-size: 1em;
+    font-weight: 900;
+
+    .v-btn__content {
+      color: white;
+    }
+  }
+
+  .btn-line img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .btn-line {
+    background-color: #09B900 !important;
+  }
+}
