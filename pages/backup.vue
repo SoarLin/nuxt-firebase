@@ -53,7 +53,7 @@ export default {
     async writeToFirestore() {
       const ref = fireDb.collection('test').doc('test')
       const document = {
-        text: 'This is a test message.'
+        text: 'Hello World.'
       }
       try {
         await ref.set(document)
@@ -64,16 +64,16 @@ export default {
       this.writeSuccessful = true
     },
     async readFromFirestore() {
-      const ref = fireDb.collection('test').doc('test')
-      let snap
-      try {
-        snap = await ref.get()
-      } catch (e) {
-        // TODO: error handling
-        console.error(e)
-      }
-      this.text = snap.data().text
-      this.readSuccessful = true
+      // const ref = fireDb.collection('test').doc('test')
+      // let snap
+      // try {
+      //   snap = await ref.get()
+      // } catch (e) {
+      //   // TODO: error handling
+      //   console.error(e)
+      // }
+      // this.text = snap.data().text
+      // this.readSuccessful = true
     }
   }
 }

@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import MyHeader from '@/pages/sections/Header'
 import HeroBanner from '@/pages/sections/HeroBanner'
 import AboutMe from '@/pages/sections/About'
@@ -49,6 +51,8 @@ import Services from '@/pages/sections/Services'
 import CustomWords from '@/pages/sections/CustomWords'
 import Attractions from '@/pages/sections/Attractions'
 import Itinerary from '@/pages/sections/Itinerary'
+
+// import { fireDb } from '~/plugins/firebase.js'
 
 export default {
   components: {
@@ -67,6 +71,16 @@ export default {
     year() {
       const date = new Date()
       return date.getFullYear()
+    },
+    ...mapGetters({
+      // trips: 'recommendTrip'
+    })
+  },
+  async asyncData({ app, store, params }) {
+    try {
+      await store.dispatch('getAllTrip', params)
+    } catch (e) {
+      console.error(e)
     }
   }
 }

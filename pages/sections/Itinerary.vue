@@ -3,20 +3,18 @@
     <v-container fluid>
       <h3 class="display-1 text-center">推薦行程</h3>
       <v-row justify="space-around">
-        <v-col cols="12" md="6">
-          <h4 class="title text-center">東北角一日遊</h4>
+        <v-col v-for="(trip, idx) in trips" :key="idx" cols="12" md="6">
+          <h4 class="title text-center">
+            {{ trip.name }}
+          </h4>
           <v-timeline>
-            <v-timeline-item>timeline item</v-timeline-item>
-            <v-timeline-item class="text-right">timeline item</v-timeline-item>
-            <v-timeline-item>timeline item</v-timeline-item>
-          </v-timeline>
-        </v-col>
-        <v-col cols="12" md="6">
-          <h4 class="title text-center">台中一日遊</h4>
-          <v-timeline>
-            <v-timeline-item>timeline item</v-timeline-item>
-            <v-timeline-item class="text-right">timeline item</v-timeline-item>
-            <v-timeline-item>timeline item</v-timeline-item>
+            <v-timeline-item
+              v-for="(value, tIdx) in trip.timeline"
+              :key="tIdx"
+              :class="isTimeRight(tIdx)"
+            >
+              {{ value }}
+            </v-timeline-item>
           </v-timeline>
         </v-col>
       </v-row>
@@ -25,7 +23,23 @@
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+
+export default {
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapGetters({
+      trips: 'recommendTrip'
+    })
+  },
+  methods: {
+    isTimeRight(idx) {
+      return idx % 2 === 0 ? '' : 'text-right'
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>
