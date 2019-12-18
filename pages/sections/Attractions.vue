@@ -1,7 +1,9 @@
 <template>
   <section>
     <v-container fluid>
-      <h3 class="display-1 text-center">景點介紹</h3>
+      <h3 class="display-1 text-center">
+        景點介紹
+      </h3>
       <v-row justify="center">
         <v-col cols="12" sm="10" md="8">
           <v-chip-group column active-class="primary--text" class="city-group">
@@ -32,7 +34,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       tags: [
         { text: 'ALL', value: 'All' },
@@ -49,7 +51,7 @@ export default {
     }
   },
   methods: {
-    chooseTag(value) {
+    chooseTag (value) {
       this.currentTag = value
       console.log(this.currentTag)
     }

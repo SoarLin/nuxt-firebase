@@ -5,15 +5,15 @@ export const state = () => ({
 })
 
 export const getters = {
-  recommendTrip: (state) => state.recommendTrip
+  recommendTrip: state => state.recommendTrip
 }
 
 export const actions = {
-  async nuxtServerInit({ dispatch }, { req }) {
+  async nuxtServerInit ({ dispatch }, { req }) {
     // await dispatch('getTrip')
     // await dispatch('getAllTrip')
   },
-  async getAllTrip({ commit }) {
+  async getAllTrip ({ commit }) {
     const collection = await fireDb.collection('trip').get()
     commit('CLEAN_RECOMMEND_TRIP')
     collection.forEach((trip) => {
@@ -21,7 +21,7 @@ export const actions = {
       commit('SET_RECOMMEND_TRIP', trip.data())
     })
   },
-  async getTrip({ commit }) {
+  async getTrip ({ commit }) {
     const ref = fireDb.collection('trip').doc('taipei_001')
     const snap = await ref.get()
     // console.log(snap.data().timeline)
@@ -30,10 +30,10 @@ export const actions = {
 }
 
 export const mutations = {
-  CLEAN_RECOMMEND_TRIP(state) {
+  CLEAN_RECOMMEND_TRIP (state) {
     state.recommendTrip = []
   },
-  SET_RECOMMEND_TRIP(state, trip) {
+  SET_RECOMMEND_TRIP (state, trip) {
     state.recommendTrip.push({
       name: trip.name,
       timeline: trip.timeline

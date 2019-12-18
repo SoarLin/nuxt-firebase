@@ -5,12 +5,16 @@
         <div class="profile-image">
           <img src="head.jpg" class="hero-head" alt="大頭照" />
         </div>
-        <h1 class="white--text profile-name">Name {{ $t('Header') }}</h1>
-        <div class="subheading mb-4 text-center">Job Title</div>
+        <h1 class="white--text profile-name">
+          Name {{ $t('Header') }}
+        </h1>
+        <div class="subheading mb-4 text-center">
+          Job Title
+        </div>
         <div class="contact-group">
           <v-tooltip top>
             <template v-slot:activator="{ on }">
-              <v-btn v-on="on" class="btn-line" large href="#">
+              <v-btn class="btn-line" large href="#" v-on="on">
                 <img src="line-logo.png" alt="LINE" />
                 LINE
               </v-btn>
@@ -19,8 +23,11 @@
           </v-tooltip>
           <v-tooltip top>
             <template v-slot:activator="{ on }">
-              <v-btn v-on="on" class="btn-phone" color="blue" large href="#">
-                <v-icon class="white--text">mdi-phone</v-icon> Phone
+              <v-btn class="btn-phone" color="blue" large href="#" v-on="on">
+                <v-icon class="white--text">
+                  mdi-phone
+                </v-icon>
+                Phone
               </v-btn>
             </template>
             <span>Call Me</span>
@@ -33,7 +40,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {}
   }
 }

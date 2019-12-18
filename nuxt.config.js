@@ -1,4 +1,4 @@
-const colors = require('vuetify/es5/util/colors').default
+// const colors = require('vuetify/es5/util/colors').default
 
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-firebase/' : '/'
@@ -97,6 +97,6 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend (config, ctx) {}
   }
 }

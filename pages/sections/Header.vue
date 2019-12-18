@@ -1,10 +1,10 @@
 <template>
   <v-app-bar app>
-    <v-toolbar-title v-text="title"></v-toolbar-title>
-    <v-spacer></v-spacer>
+    <v-toolbar-title v-text="title" />
+    <v-spacer />
     <v-menu left bottom>
       <template v-slot:activator="{ on }">
-        <v-btn v-on="on" icon>
+        <v-btn icon v-on="on">
           <v-icon>mdi-web</v-icon>
         </v-btn>
       </template>
@@ -23,13 +23,13 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       title: 'MyLogo'
     }
   },
   methods: {
-    changeLanguage(localeCode) {
+    changeLanguage (localeCode) {
       this.$i18n.locale = localeCode
     }
   }

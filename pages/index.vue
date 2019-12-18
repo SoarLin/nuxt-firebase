@@ -1,16 +1,16 @@
 <template>
   <v-app light>
-    <my-header></my-header>
+    <my-header />
     <v-content>
-      <hero-banner></hero-banner>
+      <hero-banner />
 
-      <about-me></about-me>
+      <about-me />
 
-      <services></services>
+      <services />
 
-      <attractions></attractions>
+      <attractions />
 
-      <itinerary></itinerary>
+      <itinerary />
 
       <section>
         <v-parallax src="section.jpg" height="380">
@@ -26,7 +26,7 @@
         </v-parallax>
       </section>
 
-      <custom-words></custom-words>
+      <custom-words />
 
       <v-footer color="blue darken-2">
         <v-row align="center" justify="end" class="white--text pr-4">
@@ -64,11 +64,11 @@ export default {
     Itinerary,
     CustomWords
   },
-  data() {
+  data () {
     return {}
   },
   computed: {
-    year() {
+    year () {
       const date = new Date()
       return date.getFullYear()
     },
@@ -76,7 +76,7 @@ export default {
       // trips: 'recommendTrip'
     })
   },
-  async asyncData({ app, store, params }) {
+  async asyncData ({ app, store, params }) {
     try {
       await store.dispatch('getAllTrip', params)
     } catch (e) {

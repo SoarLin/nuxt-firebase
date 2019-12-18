@@ -8,7 +8,7 @@
     >
       <v-carousel-item>
         <v-row class="fill-height px-12" align="center" justify="center">
-          <div :style="getHead('head.jpg')" class="custom-head custom1"></div>
+          <div :style="getHead('head.jpg')" class="custom-head custom1" />
           <div class="custom-word">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
             illo vel nam beatae, sunt incidunt esse quod! Esse nobis architecto
@@ -50,16 +50,16 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {}
   },
   computed: {
-    baseRouter() {
+    baseRouter () {
       return process.env.DEPLOY_ENV === 'GH_PAGES' ? '/nuxt-firebase/' : '/'
     }
   },
   methods: {
-    getHead(headImg) {
+    getHead (headImg) {
       return `background-image: url(${this.baseRouter}${headImg})`
     }
   }

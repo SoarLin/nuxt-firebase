@@ -1,7 +1,9 @@
 <template>
   <section>
     <v-container fluid>
-      <h3 class="display-1 text-center">推薦行程</h3>
+      <h3 class="display-1 text-center">
+        推薦行程
+      </h3>
       <v-row justify="space-around">
         <v-col v-for="(trip, idx) in trips" :key="idx" cols="12" md="6">
           <h4 class="title text-center">
@@ -26,7 +28,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data() {
+  data () {
     return {}
   },
   computed: {
@@ -35,7 +37,7 @@ export default {
     })
   },
   methods: {
-    isTimeRight(idx) {
+    isTimeRight (idx) {
       return idx % 2 === 0 ? '' : 'text-right'
     }
   }

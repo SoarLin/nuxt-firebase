@@ -3,7 +3,9 @@
     <v-layout column wrap class="my-12" align-center>
       <v-flex xs12 sm4 class="my-4">
         <div class="text-center">
-          <h2 class="headline">{{ $t('提供服務') }}</h2>
+          <h2 class="headline">
+            {{ $t('提供服務') }}
+          </h2>
           <span class="subheading">優質司機兼導遊，為您提供服務</span>
         </div>
       </v-flex>

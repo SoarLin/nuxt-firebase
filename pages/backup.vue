@@ -5,7 +5,7 @@
         Write to Firestore.
       </h2>
       <div>
-        <button @click="writeToFirestore" :disabled="writeSuccessful">
+        <button :disabled="writeSuccessful" @click="writeToFirestore">
           <span v-if="!writeSuccessful">Write now</span>
           <span v-else>Successful!</span>
         </button>
@@ -16,7 +16,7 @@
         Read from Firestore.
       </h2>
       <div>
-        <button @click="readFromFirestore" :disabled="readSuccessful">
+        <button :disabled="readSuccessful" @click="readFromFirestore">
           <span v-if="!readSuccessful">Read now</span>
           <span v-else>Successful!</span>
         </button>
@@ -29,14 +29,14 @@
 <script>
 import { fireDb } from '~/plugins/firebase.js'
 export default {
-  data() {
+  data () {
     return {
       writeSuccessful: false,
       readSuccessful: false,
       text: ''
     }
   },
-  async asyncData({ app, params, error }) {
+  async asyncData ({ app, params, error }) {
     const ref = fireDb.collection('test').doc('test')
     let snap
     try {
@@ -50,7 +50,7 @@ export default {
     }
   },
   methods: {
-    async writeToFirestore() {
+    async writeToFirestore () {
       const ref = fireDb.collection('test').doc('test')
       const document = {
         text: 'Hello World.'
@@ -63,7 +63,7 @@ export default {
       }
       this.writeSuccessful = true
     },
-    async readFromFirestore() {
+    async readFromFirestore () {
       // const ref = fireDb.collection('test').doc('test')
       // let snap
       // try {
