@@ -1,26 +1,61 @@
 .custom-section {
   background-color: rgba(#E5B13C, .2);
+  padding-bottom: 100px;
 }
 
-.custom-head {
-  margin: 0 50px;
-  @include size(180px, 180px, 50%);
+.custom-container {
+  padding-top: 30px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-  @include md {
-    @include size(120px, 120px, 50%);
-  }
+.custom-card {
+  @include flex(center, center);
+  padding: 20px;
 
   @include sm {
-    @include size(80px, 80px, 50%);
+    flex-direction: column;
   }
 
-  &.custom1 {
-    @include no-image-bg;
-    box-shadow: 1px 2px 8px 5px rgba(#555, .2);
-  }
-}
+  .custom__head-block {
+    @include flex(center, center);
+    flex-direction: column;
 
-.custom-word {
-  width: 60%;
-  font-size: 1.2em;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+    }
+
+    .subtitle {
+      font-weight: 600;
+      color: #9A9A9A;
+      margin-bottom: 0;
+    }
+  }
+
+  .custom-word {
+    margin-top: -20px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    font-size: 1.2em;
+
+    @include sm {
+      margin-top: 0;
+      margin-left: 0;
+    }
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    .custom-word {
+      margin-left: 0 !important;
+      margin-right: 30px;
+    }
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
 }

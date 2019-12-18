@@ -34,11 +34,15 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~/assets/main.scss'],
+  css: ['swiper/dist/css/swiper.css', '~/assets/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase.js', '~/plugins/i18n.js'],
+  plugins: [
+    { src: '~/plugins/swiper.js', ssr: false },
+    '~/plugins/firebase.js',
+    '~/plugins/i18n.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -97,6 +101,6 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend (config, ctx) {}
+    extend(config, ctx) {}
   }
 }

@@ -26,6 +26,7 @@ module.exports = {
       }
     ],
     'object-shorthand': 0,
+    'space-before-function-paren': 'error',
     'vue/no-v-html': 0,
     'vue/max-attributes-per-line': 0,
     'vue/html-indent': [
@@ -44,7 +45,20 @@ module.exports = {
       {
         ignoreWhenNoAttributes: true,
         ignoreWhenEmpty: true,
-        ignores: ['pre', 'textarea', 'p', 'span', 'v-icon', 'strong']
+        ignores: [
+          'pre',
+          'textarea',
+          'p',
+          'span',
+          'v-icon',
+          'strong',
+          'h1',
+          'h2',
+          'h3',
+          'h4',
+          'h5',
+          'h6'
+        ]
       }
     ],
     'vue/html-self-closing': [
